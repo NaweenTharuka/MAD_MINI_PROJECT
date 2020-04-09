@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.broomlk">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".UserManagement"></activity>
+        <activity android:name=".SignUp" />
+        <activity android:name=".Reservation" />
+        <activity android:name=".ResConfirmation" />
+        <activity android:name=".Payment" />
+        <activity android:name=".AddVehicle" />
+        <activity android:name=".LoginPage" />
+        <activity android:name=".EditUser" />
+        <activity android:name=".EditVeh" />
+        <activity android:name=".DeleteVeh" />
+        <activity android:name=".AdminView" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

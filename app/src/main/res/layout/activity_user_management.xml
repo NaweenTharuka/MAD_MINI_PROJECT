@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserManagement">
+
+    <TextView
+        android:id="@+id/userheader"
+        android:layout_width="224dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/userheader"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="25dp" />
+
+    <TextView
+        android:id="@+id/Fnamet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/Fnamet"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userheader"
+        android:layout_marginLeft="30dp" />
+
+    <TextView
+        android:id="@+id/Lnamet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/Lnamet"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/Fnamet"
+        app:layout_constraintTop_toBottomOf="@+id/userheader"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:id="@+id/Emailt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/Emailt"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/Lnamet"
+        app:layout_constraintTop_toBottomOf="@+id/userheader"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:id="@+id/Phonet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/Phonet"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/Emailt"
+        app:layout_constraintTop_toBottomOf="@+id/userheader"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:id="@+id/Cityt"
+        android:layout_width="41dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/Cityt"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/Phonet"
+        app:layout_constraintTop_toBottomOf="@+id/userheader"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:id="@+id/Actiont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/Actiont"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/Cityt"
+        app:layout_constraintTop_toBottomOf="@+id/userheader"
+        android:layout_marginLeft="20dp" />
+
+    <Button
+        android:id="@+id/editbtn"
+        android:layout_width="64dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="380dp"
+        android:layout_marginTop="12dp"
+        android:background="#2196F3"
+        android:text="@string/editbtn"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Actiont"
+        android:layout_marginLeft="380dp" />
+
+    <Button
+        android:id="@+id/dbtn"
+        android:layout_width="70dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:background="#CD0A0A"
+        android:text="@string/deletebtn"
+        app:layout_constraintStart_toEndOf="@+id/editbtn"
+        app:layout_constraintTop_toBottomOf="@+id/Actiont"
+        android:layout_marginLeft="10dp" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
