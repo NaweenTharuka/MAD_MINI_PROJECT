@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg2"
     tools:context=".EditUser">
 
     <TextView
@@ -11,7 +12,7 @@
         android:layout_width="210dp"
         android:layout_height="34dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="100dp"
         android:text="@string/header1"
         android:textAlignment="center"
@@ -27,13 +28,13 @@
         android:layout_width="121dp"
         android:layout_height="31dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="52dp"
         android:text="@string/Fname1"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@id/Lastname1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header1"
+        app:layout_constraintTop_toBottomOf="@+id/eduser"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="52dp" />
 
@@ -147,11 +148,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="190dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:text="@string/Lastname1"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header1"
+        app:layout_constraintTop_toBottomOf="@+id/eduser"
         android:layout_marginLeft="190dp" />
 
     <EditText
@@ -200,14 +201,14 @@
         android:layout_marginRight="40dp" />
 
     <Button
-        android:id="@+id/buttoncancel"
+        android:id="@+id/d65btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="25dp"
         android:background="#C60D0D"
-        android:text="@string/buttoncancel"
+        android:text="@string/d65btn"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/buttonsub"
         app:layout_constraintHorizontal_bias="1.0"
@@ -216,6 +217,34 @@
         android:layout_marginLeft="100dp"
         android:layout_marginRight="25dp" />
 
+    <EditText
+        android:id="@+id/eduser"
+        android:layout_width="151dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="@string/eduser"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header1" />
+
+    <Button
+        android:id="@+id/edsearch"
+        android:layout_width="108dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:background="#2196F3"
+        android:text="@string/edsearch"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/eduser"
+        app:layout_constraintTop_toBottomOf="@+id/header1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

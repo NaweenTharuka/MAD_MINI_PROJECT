@@ -107,6 +107,13 @@
     <string name="admin">Admin</string>
     <string name="txtAdd">Add Vehicle</string>
     <string name="textveh">Vehicle Type</string>
+    <string name="edsearch">SEARCH</string>
+    <string name="d65btn">DELETE</string>
+    <string name="eduser">User Name</string>
+    <string name="uin">User Name</string>
+    <string name="usertxt">User Name</string>
+    <string name="btnsub">SUBMIT</string>
+    <string name="lusername">User Name</string>
     <string-array name="Cars">
         <item>Toyota</item>
         <item>Suzuki</item>
