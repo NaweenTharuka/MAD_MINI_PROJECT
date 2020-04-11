@@ -118,50 +118,6 @@ public class DBHandler extends SQLiteOpenHelper {
 
     }
 
-    public List readAllInfo (){
-
-        String username = "charith";
-        SQLiteDatabase db = getReadableDatabase();
-
-        // Define a projection that specifies which columns from the database
-        // you will actually use after this query.
-        String[] projection = {
-                BaseColumns._ID,
-                UserProfile.Users.COLUMN_1,
-                UserProfile.Users.COLUMN_2,
-                UserProfile.Users.COLUMN_3,
-                UserProfile.Users.COLUMN_4,
-                UserProfile.Users.COLUMN_5,
-                UserProfile.Users.COLUMN_6,
-                UserProfile.Users.COLUMN_7
-        };
-
-        // Filter results WHERE "title" = 'My Title'
-        String selection = UserProfile.Users.COLUMN_1 + " = ?";
-        String[] selectionArgs = { username };
-
-        // How you want the results sorted in the resulting Cursor
-        String sortOrder =
-                UserProfile.Users.COLUMN_1 + " CMV";
-
-        Cursor cursor = db.query(
-                UserProfile.Users.TABLE_NAME,   // The table to query
-                projection,             // The array of columns to return (pass null to get all)
-                null,              // The columns for the WHERE clause
-                null,          // The values for the WHERE clause
-                null,                   // don't group the rows
-                null,                   // don't filter by row groups
-                sortOrder               // The sort order
-        );
-
-        List usernames = new ArrayList<>();
-        while(cursor.moveToNext()) {
-            String user = cursor.getString(cursor.getColumnIndexOrThrow(UserProfile.Users.COLUMN_1));
-            usernames.add(user);
-        }
-        cursor.close();
-        return usernames;
-    }
 
     public List readAllInfo (String username){
 
