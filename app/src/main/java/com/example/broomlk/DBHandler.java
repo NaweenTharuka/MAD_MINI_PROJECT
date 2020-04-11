@@ -44,6 +44,7 @@ public class DBHandler extends SQLiteOpenHelper {
                     UserProfile.Users.COLUMN_6 + " TEXT," +
                     UserProfile.Users.COLUMN_7 + " TEXT)";
 
+
     private static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS " + UserProfile.Users.TABLE_NAME;
 
@@ -119,7 +120,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
     public List readAllInfo (){
 
-        String username = "avinash";
+        String username = "charith";
         SQLiteDatabase db = getReadableDatabase();
 
         // Define a projection that specifies which columns from the database
@@ -141,7 +142,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
         // How you want the results sorted in the resulting Cursor
         String sortOrder =
-                UserProfile.Users.COLUMN_1 + " ASC";
+                UserProfile.Users.COLUMN_1 + " CMV";
 
         Cursor cursor = db.query(
                 UserProfile.Users.TABLE_NAME,   // The table to query

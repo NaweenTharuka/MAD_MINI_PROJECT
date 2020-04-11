@@ -114,6 +114,17 @@
     <string name="usertxt">User Name</string>
     <string name="btnsub">SUBMIT</string>
     <string name="lusername">User Name</string>
+    <string name="holdername">Card Holder\'s Name</string>
+    <string name="testpay">Payment</string>
+    <string name="edst1">Edit Payment Details</string>
+    <string name="edst2">We Accepted</string>
+    <string name="edholder">Card Holder\'s Name</string>
+    <string name="edpsearch">SEARCH</string>
+    <string name="edcnum">Card Number</string>
+    <string name="eddate">Expire Date</string>
+    <string name="edcv">CVV NO</string>
+    <string name="edpbtn">EDIT</string>
+    <string name="pedbtn">DELETE</string>
     <string-array name="Cars">
         <item>Toyota</item>
         <item>Suzuki</item>
