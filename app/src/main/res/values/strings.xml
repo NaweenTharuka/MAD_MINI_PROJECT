@@ -43,24 +43,6 @@
     <string name="buttonin">CONTINUE</string>
     <string name="testbtn">SignUp</string>
     <string name="pDate2">mm/dd/yyyy</string>
-    <string name="lable10">PickUp-Date</string>
-    <string name="lable6">Return-Date</string>
-    <string name="rDate2">mm/dd/yyyy</string>
-    <string name="lable7">Vehicle-Model</string>
-    <string name="lable9">Vehicle-Colour</string>
-    <string name="textView">Confirmation</string>
-    <string name="button">EDIT</string>
-    <string name="button2">DELETE</string>
-    <string name="button3">SUBMIT</string>
-    <string name="title">BOOK A CAR TODAY....!</string>
-    <string name="pDate">mm/dd/yyyy</string>
-    <string name="rDate">mm/dd/yyyy</string>
-    <string name="lable1">PickUp-Date</string>
-    <string name="lable2">Return_Date</string>
-    <string name="lable3">Vehicle-Model</string>
-    <string name="lable4">Sub-Model</string>
-    <string name="lable5">Vehicle-Colour</string>
-    <string name="bookbtn">BOOK NOW</string>
     <string name="vehType">Vehicle Type</string>
     <string name="owName">Owner Name</string>
     <string name="owNIC">Owner NIC</string>
@@ -125,6 +107,18 @@
     <string name="edcv">CVV NO</string>
     <string name="edpbtn">EDIT</string>
     <string name="pedbtn">DELETE</string>
+    <string name="lable2">"Pick-Up Date "</string>
+    <string name="lable3">Return Date</string>
+    <string name="lable4">Vehicle Modle</string>
+    <string name="lable5">Vehicle Sub Modle</string>
+    <string name="pDate">MM/DD/YYYY</string>
+    <string name="rDate">MM/DD/YYYY</string>
+    <string name="add">Book Now</string>
+    <string name="view">View</string>
+    <string name="edit">Edit</string>
+    <string name="search">SEARCH</string>
+    <string name="delete">DELETE</string>
+    <string name="submit">SUBMIT</string>
     <string-array name="Cars">
         <item>Toyota</item>
         <item>Suzuki</item>
@@ -139,15 +133,6 @@
         <item>Toyota Corona</item>
         <item>Toyota Corolla</item>
         <item>Toyota Premio</item>
-    </string-array>
-
-    <string-array name="colour">
-        <item>White</item>
-        <item>Black</item>
-        <item>Grey</item>
-        <item>Blue</item>
-        <item>Red</item>
-
     </string-array>
 
 </resources>
