@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         orderbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent continueIntent = new Intent(MainActivity.this, Reservation.class);
+                Intent continueIntent = new Intent(MainActivity.this, Available.class);
                 startActivity(continueIntent);
             }
         });
