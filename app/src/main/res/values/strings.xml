@@ -119,6 +119,9 @@
     <string name="search">SEARCH</string>
     <string name="delete">DELETE</string>
     <string name="submit">SUBMIT</string>
+    <string name="adminpanel">ADMIN PANEL</string>
+    <string name="vehreg">Vehicle Registration</string>
+    <string name="drireg">Driver Registration</string>
     <string-array name="Cars">
         <item>Toyota</item>
         <item>Suzuki</item>
