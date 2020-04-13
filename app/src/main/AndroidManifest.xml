@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Adminpanel"></activity>
+        <activity android:name=".DriverList"></activity>
+        <activity android:name=".EdiPro"></activity>
+        <activity android:name=".DriverProfiles" />
+        <activity android:name=".Home" />
+        <activity android:name=".Adminpanel" />
         <activity android:name=".EditPayment" />
         <activity android:name=".UserManagement" />
         <activity android:name=".SignUp" />
