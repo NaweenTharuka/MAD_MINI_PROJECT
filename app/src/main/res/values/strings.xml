@@ -119,20 +119,20 @@
     <string name="search">SEARCH</string>
     <string name="delete">DELETE</string>
     <string name="submit">SUBMIT</string>
+    <string name="payment">PAYMENT</string>
     <string-array name="Cars">
-        <item>Toyota</item>
-        <item>Suzuki</item>
-        <item>Mazda</item>
-        <item>Micro</item>
-        <item>BMW</item>
+        <item> Zip</item>
+        <item>Mini-Zip</item>
+        <item>Mega-Zip</item>
     </string-array>
 
     <string-array name="model">
         <item>Toyota Prius</item>
         <item>Toyota Aque</item>
-        <item>Toyota Corona</item>
-        <item>Toyota Corolla</item>
-        <item>Toyota Premio</item>
+        <item>Suzuki Swift</item>
+        <item>Suzuki Wagon R</item>
+        <item>Toyota KDH</item>
+        <item>Toyota High-Roof</item>
     </string-array>
 
 </resources>
