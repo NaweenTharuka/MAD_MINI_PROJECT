@@ -3,6 +3,7 @@ package com.example.broomlk;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -24,7 +25,7 @@ public class ResConfirmation extends AppCompatActivity {
     private TextView pD, rD;
     private EditText pNo;
     private Spinner s1, s2;
-    private Button b4, b5, b6;
+    private Button b4, b5, b6, b7;
     private DatePickerDialog.OnDateSetListener DataSetListner3;
     private DatePickerDialog.OnDateSetListener DataSetListner4;
 
@@ -40,6 +41,7 @@ public class ResConfirmation extends AppCompatActivity {
         b4 = (Button) findViewById(R.id.btnsubmit);
         b5 = (Button) findViewById(R.id.btndel);
         b6 = (Button) findViewById(R.id.btnsearch);
+
 
 
 
@@ -154,6 +156,8 @@ public class ResConfirmation extends AppCompatActivity {
                 Boolean status = reservationDatabase.updateInfo(pNo.getText().toString(),pD.getText().toString(),rD.getText().toString(),s1.getSelectedItem().toString(),s1.getSelectedItem().toString());
                 if (status){
                     Toast.makeText(ResConfirmation.this, "Reservation Details Updated", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getApplicationContext(),Payment.class);
+                    startActivity(i);
                 }
                 else {
                     Toast.makeText(ResConfirmation.this, "Reservation Update Failed", Toast.LENGTH_SHORT).show();
@@ -169,6 +173,7 @@ public class ResConfirmation extends AppCompatActivity {
 
                 ReservationDatabase reservationDatabase = new ReservationDatabase(getApplicationContext());
                 reservationDatabase.deleteInfo(pNo.getText().toString());
+
 
                 Toast.makeText(ResConfirmation.this, "Reservation Details Deleted", Toast.LENGTH_SHORT).show();
 
