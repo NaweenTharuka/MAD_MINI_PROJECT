@@ -2,6 +2,7 @@ package com.example.broomlk;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -75,6 +76,9 @@ public class EditUser extends AppCompatActivity {
                     Toast.makeText(EditUser.this, "Update Failed", Toast.LENGTH_SHORT).show();
                 }
 
+                Intent i = new Intent(getApplicationContext(),LoginPage.class);
+                startActivity(i);
+
             }
         });
 
@@ -87,6 +91,9 @@ public class EditUser extends AppCompatActivity {
                 dbHandler.deleteInfo(username.getText().toString());
 
                 Toast.makeText(EditUser.this, "User Deleted", Toast.LENGTH_SHORT).show();
+
+                Intent i = new Intent(getApplicationContext(),SignUp.class);
+                startActivity(i);
 
                 username.setText(null);
                 userFName.setText(null);
