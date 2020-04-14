@@ -7,6 +7,18 @@
     android:background="@drawable/bg3"
     tools:context=".EditPayment">
 
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="328dp"
+        android:layout_height="170dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.971"
+        app:srcCompat="@drawable/broom" />
+
     <TextView
         android:id="@+id/edst1"
         android:layout_width="229dp"
@@ -139,9 +151,9 @@
         android:layout_marginTop="14dp"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
-        android:background="#2196F3"
+        android:background="@drawable/back"
         android:text="@string/edpbtn"
-        android:textColor="#FFFFFF"
+        android:textColor="#000"
         app:layout_constraintEnd_toStartOf="@+id/pedbtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edcv" />
@@ -155,9 +167,9 @@
         android:layout_marginTop="14dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
-        android:background="#C60D0D"
+        android:background="@drawable/back"
         android:text="@string/pedbtn"
-        android:textColor="#FFFFFF"
+        android:textColor="#000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/edpbtn"
         app:layout_constraintTop_toBottomOf="@+id/edcv" />

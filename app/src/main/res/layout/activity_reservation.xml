@@ -184,7 +184,7 @@
         app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.815" />
+        app:layout_constraintVertical_bias="0.765" />
 
     <Button
         android:id="@+id/btnedit"
@@ -197,10 +197,10 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.684"
+        app:layout_constraintHorizontal_bias="0.678"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.815" />
+        app:layout_constraintVertical_bias="0.765" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -211,7 +211,7 @@
         app:layout_constraintHorizontal_bias="0.39"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.996"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/broom" />
 
     <TextView
@@ -233,18 +233,18 @@
     <TextView
         android:id="@+id/textView17"
         style="@android:style/Widget.Holo.Light.TextView.SpinnerItem"
-        android:layout_width="279dp"
-        android:layout_height="46dp"
+        android:layout_width="253dp"
+        android:layout_height="51dp"
         android:text="@string/car"
         android:textColor="#FBFBFB"
         android:textSize="30sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.962"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.078" />
+        app:layout_constraintVertical_bias="0.089" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

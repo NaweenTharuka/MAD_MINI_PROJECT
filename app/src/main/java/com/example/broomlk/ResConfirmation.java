@@ -132,7 +132,7 @@ public class ResConfirmation extends AppCompatActivity {
                 }
                 else {
 
-                    Toast.makeText(ResConfirmation.this, "Reservation Details Found.....! Details: "+phonenumber.get(0).toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ResConfirmation.this, "Reservation Details Found.....!    Mobile Number: "+phonenumber.get(0).toString(), Toast.LENGTH_SHORT).show();
                     pNo.setText(phonenumber.get(0).toString());
                     pD.setText(phonenumber.get(1).toString());
                     rD.setText(phonenumber.get(2).toString());

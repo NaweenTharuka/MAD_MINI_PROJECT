@@ -7,6 +7,18 @@
     android:background="@drawable/bg2"
     tools:context=".LoginPage">
 
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="121dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.989"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.007"
+        app:srcCompat="@drawable/broom" />
+
     <EditText
         android:id="@+id/lusername"
         android:layout_width="290dp"

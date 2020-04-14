@@ -129,7 +129,7 @@
     <string name="age">Age</string>
     <string name="username">User Name</string>
     <string name="book">BOOK</string>
-    <string name="car">A CAR TODAY........!</string>
+    <string name="car">A CAR TODAY.....!</string>
     <string-array name="Cars">
         <item>Zip</item>
         <item>Mini-Zip</item>

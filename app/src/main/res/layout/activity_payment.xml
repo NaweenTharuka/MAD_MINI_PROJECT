@@ -7,6 +7,18 @@
     android:background="@drawable/bg3"
     tools:context=".Payment">
 
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="416dp"
+        android:layout_height="139dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.927"
+        app:srcCompat="@drawable/broom" />
+
     <TextView
         android:id="@+id/pays"
         android:layout_width="187dp"
@@ -110,9 +122,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
-        android:background="#2196F3"
+        android:background="@drawable/back"
         android:text="@string/abtn"
-        android:textColor="#FFFFFF"
+        android:textColor="#000"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/ubtn"
         app:layout_constraintStart_toStartOf="parent"
@@ -127,9 +139,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
-        android:background="#4CAF50"
+        android:background="@drawable/back"
         android:text="@string/ubtn"
-        android:textColor="#FFFFFF"
+        android:textColor="#000"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/abtn"

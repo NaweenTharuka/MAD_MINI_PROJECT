@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.402"
+        app:layout_constraintVertical_bias="0.662"
         app:srcCompat="@drawable/bg1" />
 
     <Button
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:background="#F3EEEE"
+        android:background="#FDC211"
         android:text="@string/btn5"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,26 +35,27 @@
         android:id="@+id/button6"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="92dp"
         android:background="#FFCA28"
         android:text="@string/btn6"
         android:textColor="#494848"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.606"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button7"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:background="#FFFFFF"
+        android:background="#FFCA28"
         android:text="@string/btn7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.606"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button6"
+        app:layout_constraintVertical_bias="0.636" />
 
     <TextView
         android:id="@+id/textView2"
