@@ -35,10 +35,7 @@ public class LoginPage extends AppCompatActivity {
             }
         });
 
-        Button adminbtn = (Button) findViewById(R.id.button8);
-
-
-        adminbtn.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent continueIntent = new Intent(LoginPage.this, Adminpanel.class);

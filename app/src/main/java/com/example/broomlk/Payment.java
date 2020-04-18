@@ -42,7 +42,7 @@ public class Payment extends AppCompatActivity {
                 long newID = pdbHandler.addInfo(holdername.getText().toString(),cardnum.getText().toString(),exdate.getText().toString(),cvvnum.getText().toString());
                 Toast.makeText(Payment.this, "Details Added. Payment Details ID: "+ newID, Toast.LENGTH_SHORT).show();
 
-                Intent i = new Intent(getApplicationContext(),EditPayment.class);
+                Intent i = new Intent(getApplicationContext(),CustomerFeedbacks.class);
                 startActivity(i);
                 holdername.setText(null);
                 cardnum.setText(null);

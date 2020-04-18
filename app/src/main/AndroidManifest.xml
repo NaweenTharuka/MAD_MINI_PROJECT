@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LastPage"></activity>
+        <activity android:name=".LastPage" />
         <activity android:name=".CustomerFeedbacks" />
         <activity android:name=".Adminpanel" />
         <activity android:name=".EditPayment" />
@@ -29,7 +29,8 @@
         <activity android:name=".EditVeh" />
         <activity android:name=".DeleteVeh" />
         <activity android:name=".AdminView" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".FirstPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -142,6 +142,9 @@
     <string name="fedEdit">Id for Edit</string>
     <string name="paySub">Submit</string>
     <string name="fededitdel"><![CDATA[ID for EDIT & DELETE]]></string>
+    <string name="test">test</string>
+    <string name="firstpage">Get Ride With Broom.lk </string>
+    <string name="rescar">Reserve Your Vehicle Now!</string>
     <string-array name="Cars">
         <item>Zip</item>
         <item>Mini-Zip</item>

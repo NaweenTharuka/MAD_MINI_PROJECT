@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
         Button signupbtn = (Button) findViewById(R.id.button7);
         Button loginbtn = (Button) findViewById(R.id.button5);
         Button orderbtn = (Button) findViewById(R.id.button6);
-       // Button paymentbtn = (Button) findViewById(R.id.testpay);
-
 
         signupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,14 +45,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(continueIntent);
             }
         });
-
-       /* paymentbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent continueIntent = new Intent(MainActivity.this, Payment.class);
-                startActivity(continueIntent);
-            }
-        });*/
 
     }
 }

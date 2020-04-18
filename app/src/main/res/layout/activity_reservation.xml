@@ -215,36 +215,19 @@
         app:srcCompat="@drawable/broom" />
 
     <TextView
-        android:id="@+id/textView16"
-        style="@android:style/Widget.Material.Light.TextView.SpinnerItem"
-        android:layout_width="118dp"
-        android:layout_height="38dp"
-        android:text="@string/book"
-        android:textColor="#1B1616"
+        android:id="@+id/textView17"
+        style="@android:style/Widget.Holo.Light.TextView.SpinnerItem"
+        android:layout_width="316dp"
+        android:layout_height="45dp"
+        android:text="@string/rescar"
+        android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.088" />
-
-    <TextView
-        android:id="@+id/textView17"
-        style="@android:style/Widget.Holo.Light.TextView.SpinnerItem"
-        android:layout_width="253dp"
-        android:layout_height="51dp"
-        android:text="@string/car"
-        android:textColor="#FBFBFB"
-        android:textSize="30sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.089" />
+        app:layout_constraintVertical_bias="0.082" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
