@@ -130,6 +130,18 @@
     <string name="username">User Name</string>
     <string name="book">BOOK</string>
     <string name="car">A CAR TODAY.....!</string>
+    <string name="select">Choose One</string>
+    <string name="thanks">Thank You for getting Our service</string>
+    <string name="home">OK</string>
+    <string name="fed1">Customer Feedback</string>
+    <string name="fed2">Are you satisfy with our service ?</string>
+    <string name="fed3">Rate Us !</string>
+    <string name="fed4">Any thing else !</string>
+    <string name="btnSkip">Skip</string>
+    <string name="feddel">ID for Delete</string>
+    <string name="fedEdit">Id for Edit</string>
+    <string name="paySub">Submit</string>
+    <string name="fededitdel"><![CDATA[ID for EDIT & DELETE]]></string>
     <string-array name="Cars">
         <item>Zip</item>
         <item>Mini-Zip</item>
@@ -145,6 +157,19 @@
         <item>Suzuki Wagon R</item>
         <item>Toyota KDH</item>
         <item>Toyota High-Roof</item>
+    </string-array>
+
+    <string-array name="feedback">
+        <item>Very Satisfied</item>
+        <item>Satisfied</item>
+        <item>Not Satisfied</item>
+    </string-array>
+
+    <string-array name="rating">
+        <item>*</item>
+        <item>**</item>
+        <item>***</item>
+        <item>****</item>
     </string-array>
 
 </resources>
