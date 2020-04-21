@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoginPage extends AppCompatActivity {
 
@@ -40,6 +41,25 @@ public class LoginPage extends AppCompatActivity {
             public void onClick(View v) {
                 Intent continueIntent = new Intent(LoginPage.this, Adminpanel.class);
                 startActivity(continueIntent);
+            }
+        });
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DBHandler dbHandler = new DBHandler(getApplicationContext());
+                if(dbHandler.LoginUser(username.getText().toString(),password.getText().toString())){
+                    Toast.makeText(LoginPage.this, "Logged in Success !", Toast.LENGTH_SHORT).show();
+                    username.setText(null);
+                    password.setText(null);
+                    Intent i = new Intent(getApplicationContext(),Available.class);
+                    startActivity(i);
+                }
+                else {
+                    Toast.makeText(LoginPage.this, "No valid User !", Toast.LENGTH_SHORT).show();
+                }
+
+
             }
         });
     }

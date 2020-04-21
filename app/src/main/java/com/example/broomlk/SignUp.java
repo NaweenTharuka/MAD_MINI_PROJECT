@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,37 +32,34 @@ public class SignUp extends AppCompatActivity {
 
 
 
-        Button continueBtn = (Button) findViewById(R.id.btnsub);
-
-        continueBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent continueIntent = new Intent(SignUp.this, LoginPage.class);
-                startActivity(continueIntent);
-            }
-        });
-
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                if(TextUtils.isEmpty(username.getText())){
+                    username.setError("Please Enter User Name");
+                    username.requestFocus();
+                }else {
+                    DBHandler dbHandler = new DBHandler(getApplicationContext());
+                    long newID = dbHandler.addInfo(username.getText().toString(), userFName.getText().toString(), userLName.getText().toString(), userEmail.getText().toString(), phone.getText().toString(), password.getText().toString(), city.getText().toString());
+                    Toast.makeText(SignUp.this, "User Added. User ID: " + newID, Toast.LENGTH_SHORT).show();
 
-                DBHandler dbHandler = new DBHandler(getApplicationContext());
-                long newID = dbHandler.addInfo(username.getText().toString(),userFName.getText().toString(),userLName.getText().toString(),userEmail.getText().toString(),phone.getText().toString(),password.getText().toString(),city.getText().toString());
-                Toast.makeText(SignUp.this, "User Added. User ID: "+ newID, Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getApplicationContext(),LoginPage.class);
+                    startActivity(i);
+                    username.setText(null);
+                    userFName.setText(null);
+                    userLName.setText(null);
+                    userEmail.setText(null);
+                    phone.setText(null);
+                    password.setText(null);
+                    password.setText(null);
+                    city.setText(null);
+                }
 
-                Intent i = new Intent(getApplicationContext(),LoginPage.class);
-                startActivity(i);
-                username.setText(null);
-                userFName.setText(null);
-                userLName.setText(null);
-                userEmail.setText(null);
-                phone.setText(null);
-                password.setText(null);
-                password.setText(null);
-                city.setText(null);
+
 
             }
+
         });
 
 
