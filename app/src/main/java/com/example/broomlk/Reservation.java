@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -129,21 +130,27 @@ public class Reservation extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(TextUtils.isEmpty(pD.getText())){
+                    pD.setError("Enter pickup date!");
+                    pD.requestFocus();}
+                else if(TextUtils.isEmpty(rD.getText())){
+                        rD.setError("Enter return date!");
+                        rD.requestFocus(); }
+                else {
 
+                    ReservationDatabase reservationDatabase = new ReservationDatabase(getApplicationContext());
+                    long newID = reservationDatabase.addInfo(pNo.getText().toString(), pD.getText().toString(), rD.getText().toString(), s1.getSelectedItem().toString(), s2.getSelectedItem().toString());
+                    Toast.makeText(Reservation.this, "Reservation Successfully......!    Reservation ID: " + newID, Toast.LENGTH_SHORT).show();
 
-                ReservationDatabase reservationDatabase = new ReservationDatabase(getApplicationContext());
-                long newID = reservationDatabase.addInfo(pNo.getText().toString(),pD.getText().toString(),rD.getText().toString(),s1.getSelectedItem().toString(), s2.getSelectedItem().toString());
-                Toast.makeText(Reservation.this, "Reservation Successfully......!    Reservation ID: "+ newID, Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getApplicationContext(), ResConfirmation.class);
+                    startActivity(i);
+                    pNo.setText(null);
+                    pD.setText(null);
+                    rD.setText(null);
+                    s1.getSelectedItem();
+                    s2.getSelectedItem();
 
-                Intent i = new Intent(getApplicationContext(),ResConfirmation.class);
-                startActivity(i);
-                pNo.setText(null);
-                pD.setText(null);
-                rD.setText(null);
-                s1.getSelectedItem();
-                s2.getSelectedItem();
-
-
+                }
             }
         });
 

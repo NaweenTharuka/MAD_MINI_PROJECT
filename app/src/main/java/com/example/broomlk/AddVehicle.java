@@ -10,6 +10,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -56,17 +57,34 @@ public class AddVehicle extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isInsereted = mydb.inserData(editvtype.getText().toString(),
-                                editoname.getText().toString(),
-                                editonic.getText().toString(),
-                                editvnumber.getText().toString(),
-                                editengnum.getText().toString());
-                        if(isInsereted = true){
-                            Toast.makeText(AddVehicle.this, "Inserted New Vehicle !!", Toast.LENGTH_LONG).show();
-                            addNotification();}
-                        else
-                            Toast.makeText(AddVehicle.this, "Data not Inserted !!", Toast.LENGTH_LONG).show();
+                        if(TextUtils.isEmpty(editvtype.getText())){
+                            editvtype.setError("Enter Vehicle type !");
+                            editvtype.requestFocus(); }
+                        else if(TextUtils.isEmpty(editoname.getText())){
+                            editoname.setError("Enter Owner Name !");
+                            editoname.requestFocus(); }
+                        else if(TextUtils.isEmpty(editonic.getText())){
+                            editonic.setError("Enter Owner NIC !");
+                            editonic.requestFocus(); }
+                        else if(TextUtils.isEmpty(editvnumber.getText())){
+                            editvnumber.setError("Enter Vehicle Number");
+                            editvnumber.requestFocus(); }
+                        else if(TextUtils.isEmpty(editengnum.getText())){
+                            editengnum.setError("Enter Vehicle Engine Number !");
+                            editengnum.requestFocus(); }
+                        else{
+                            boolean isInsereted = mydb.inserData(editvtype.getText().toString(),
+                                    editoname.getText().toString(),
+                                    editonic.getText().toString(),
+                                    editvnumber.getText().toString(),
+                                    editengnum.getText().toString());
+                            if(isInsereted = true){
+                                Toast.makeText(AddVehicle.this, "Inserted New Vehicle !!", Toast.LENGTH_LONG).show();
+                                addNotification();}
+                            else
+                                Toast.makeText(AddVehicle.this, "Data not Inserted !!", Toast.LENGTH_LONG).show();
 
+                        }
                     }
                 }
 

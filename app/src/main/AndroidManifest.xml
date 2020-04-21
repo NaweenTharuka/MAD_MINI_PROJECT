@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".VehicleScroll"></activity>
         <activity android:name=".LastPage" />
         <activity android:name=".CustomerFeedbacks" />
         <activity android:name=".Adminpanel" />
@@ -28,10 +29,10 @@
         <activity android:name=".EditUser" />
         <activity android:name=".EditVeh" />
         <activity android:name=".DeleteVeh" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".AdminView" />
-        <activity android:name=".MainActivity"/>
         <activity android:name=".FirstPage">
-            <intent-filter>
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
