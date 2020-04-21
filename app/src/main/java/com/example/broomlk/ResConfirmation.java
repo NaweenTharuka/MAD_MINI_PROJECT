@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -35,7 +36,7 @@ public class ResConfirmation extends AppCompatActivity {
         setContentView(R.layout.activity_res_confirmation);
         pD = (TextView) findViewById(R.id.pDate);
         rD = (TextView) findViewById(R.id.rDate);
-        pNo = (EditText) findViewById(R.id.editphone);
+        pNo =(EditText) findViewById(R.id.editphone);
         s1 = (Spinner) findViewById(R.id.spinner1);
         s2 = (Spinner) findViewById(R.id.spinner2);
         b4 = (Button) findViewById(R.id.btnsubmit);
@@ -151,18 +152,24 @@ public class ResConfirmation extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                if (TextUtils.isEmpty(pNo.getText())) {
+                    pNo.setError("Search your Phone Number to Edit or Confirm Your Reservation!");
+                    pNo.requestFocus();
+                } else {
+
+
+
                 ReservationDatabase reservationDatabase = new ReservationDatabase(getApplicationContext());
 
-                Boolean status = reservationDatabase.updateInfo(pNo.getText().toString(),pD.getText().toString(),rD.getText().toString(),s1.getSelectedItem().toString(),s1.getSelectedItem().toString());
-                if (status){
+                Boolean status = reservationDatabase.updateInfo(pNo.getText().toString(), pD.getText().toString(), rD.getText().toString(), s1.getSelectedItem().toString(), s1.getSelectedItem().toString());
+                if (status) {
                     Toast.makeText(ResConfirmation.this, "Reservation Details Updated", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(getApplicationContext(),Payment.class);
+                    Intent i = new Intent(getApplicationContext(), Payment.class);
                     startActivity(i);
-                }
-                else {
+                } else {
                     Toast.makeText(ResConfirmation.this, "Reservation Update Failed", Toast.LENGTH_SHORT).show();
                 }
-
+            }
             }
         });
 
@@ -171,17 +178,25 @@ public class ResConfirmation extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                ReservationDatabase reservationDatabase = new ReservationDatabase(getApplicationContext());
-                reservationDatabase.deleteInfo(pNo.getText().toString());
+                if(TextUtils.isEmpty(pNo.getText())){
+                    pNo.setError("Search Valid Phone Number to Delete Your Reservation!");
+                    pNo.requestFocus();}
+                else {
+
+                    ReservationDatabase reservationDatabase = new ReservationDatabase(getApplicationContext());
+                    reservationDatabase.deleteInfo(pNo.getText().toString());
 
 
-                Toast.makeText(ResConfirmation.this, "Reservation Details Deleted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ResConfirmation.this, "Reservation Details Deleted", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getApplicationContext(), Available.class);
+                    startActivity(i);
 
-                pNo.setText(null);
-                pD.setText(null);
-                rD.setText(null);
-                s1.getSelectedItem();
-                s1.getSelectedItem();
+                    pNo.setText(null);
+                    pD.setText(null);
+                    rD.setText(null);
+                    s1.getSelectedItem();
+                    s1.getSelectedItem();
+                }
             }
         });
 

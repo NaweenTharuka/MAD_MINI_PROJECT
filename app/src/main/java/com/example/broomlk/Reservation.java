@@ -131,11 +131,14 @@ public class Reservation extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(TextUtils.isEmpty(pD.getText())){
-                    pD.setError("Enter pickup date!");
+                    pD.setError("Enter Pick-Up Date!");
                     pD.requestFocus();}
                 else if(TextUtils.isEmpty(rD.getText())){
-                        rD.setError("Enter return date!");
+                        rD.setError("Enter Return Date!");
                         rD.requestFocus(); }
+                else if(TextUtils.isEmpty(pNo.getText())){
+                        pNo.setError("Enter Your Phone Number!");
+                        pNo.requestFocus(); }
                 else {
 
                     ReservationDatabase reservationDatabase = new ReservationDatabase(getApplicationContext());
