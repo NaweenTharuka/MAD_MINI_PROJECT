@@ -49,11 +49,22 @@ public class LoginPage extends AppCompatActivity {
             public void onClick(View v) {
                 DBHandler dbHandler = new DBHandler(getApplicationContext());
                 if(dbHandler.LoginUser(username.getText().toString(),password.getText().toString())){
-                    Toast.makeText(LoginPage.this, "Logged in Success !", Toast.LENGTH_SHORT).show();
-                    username.setText(null);
-                    password.setText(null);
-                    Intent i = new Intent(getApplicationContext(),Available.class);
-                    startActivity(i);
+
+                    if(username.getText().toString().equals("admin")){
+
+                        Toast.makeText(LoginPage.this, "Logged in Success !", Toast.LENGTH_SHORT).show();
+                        username.setText(null);
+                        password.setText(null);
+                        Intent i = new Intent(getApplicationContext(),Adminpanel.class);
+                        startActivity(i);
+                    }else {
+
+                        Toast.makeText(LoginPage.this, "Logged in Success !", Toast.LENGTH_SHORT).show();
+                        username.setText(null);
+                        password.setText(null);
+                        Intent i = new Intent(getApplicationContext(), Available.class);
+                        startActivity(i);
+                    }
                 }
                 else {
                     Toast.makeText(LoginPage.this, "No valid User !", Toast.LENGTH_SHORT).show();

@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class SignUp extends AppCompatActivity {
 
     EditText username, userFName,userLName,userEmail,phone, password,city ;
-    Button submit, updateProfile;
+    Button submit;
 
 
     @Override
