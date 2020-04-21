@@ -174,15 +174,4 @@
         app:layout_constraintStart_toEndOf="@+id/edpbtn"
         app:layout_constraintTop_toBottomOf="@+id/edcv" />
 
-    <Button
-        android:id="@+id/paysub"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sub"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.718"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.888" />
 </androidx.constraintlayout.widget.ConstraintLayout>

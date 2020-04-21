@@ -28,15 +28,8 @@ public class EditPayment extends AppCompatActivity {
         edit = findViewById(R.id.edpbtn);
         delete = findViewById(R.id.pedbtn);
         search = findViewById(R.id.edpsearch);
-        Button paysub = (Button) findViewById(R.id.paysub);
 
-        paysub.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent continueIntent = new Intent(EditPayment.this, CustomerFeedbacks.class);
-                startActivity(continueIntent);
-            }
-        });
+
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override

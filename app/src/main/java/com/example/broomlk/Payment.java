@@ -44,11 +44,30 @@ public class Payment extends AppCompatActivity {
                 if(TextUtils.isEmpty(holdername.getText())){
                     holdername.setError("Please Enter Holder Name");
                     holdername.requestFocus();
+                }
+                else if(TextUtils.isEmpty(cardnum.getText())){
+                    cardnum.setError("Please Enter Card Number");
+                    cardnum.requestFocus();
+                }
+                else if(TextUtils.isEmpty(exdate.getText())){
+                    exdate.setError("Please Enter Expire Date");
+                    exdate.requestFocus();
+                }
+                else if(TextUtils.isEmpty(cvvnum.getText())){
+                    cvvnum.setError("Please Enter cvv Number");
+                    cvvnum.requestFocus();
                 }else {
 
                     PDBHandler pdbHandler = new PDBHandler(getApplicationContext());
                     long newID = pdbHandler.addInfo(holdername.getText().toString(), cardnum.getText().toString(), exdate.getText().toString(), cvvnum.getText().toString());
                     Toast.makeText(Payment.this, "Details Added. Payment Details ID: " + newID, Toast.LENGTH_SHORT).show();
+
+                    Intent i = new Intent(getApplicationContext(),CustomerFeedbacks.class);
+                    startActivity(i);
+                    holdername.setText(null);
+                    cardnum.setText(null);
+                    exdate.setText(null);
+                    cvvnum.setText(null);
                 }
 
 

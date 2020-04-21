@@ -39,6 +39,30 @@ public class SignUp extends AppCompatActivity {
                 if(TextUtils.isEmpty(username.getText())){
                     username.setError("Please Enter User Name");
                     username.requestFocus();
+                }
+                else if(TextUtils.isEmpty(userFName.getText())){
+                    userFName.setError("Please Enter First Name");
+                    userFName.requestFocus();
+                }
+                else if(TextUtils.isEmpty(userLName.getText())){
+                    userLName.setError("Please Enter Last Name");
+                    userLName.requestFocus();
+                }
+                else if(TextUtils.isEmpty(userEmail.getText())){
+                    userEmail.setError("Please Enter Email");
+                    userEmail.requestFocus();
+                }
+                else if(TextUtils.isEmpty(phone.getText())){
+                    phone.setError("Please Enter Phone Number");
+                    phone.requestFocus();
+                }
+                else if(TextUtils.isEmpty(password.getText())){
+                    password.setError("Please Enter Password");
+                    password.requestFocus();
+                }
+                else if(TextUtils.isEmpty(city.getText())){
+                    city.setError("Please Enter City");
+                    city.requestFocus();
                 }else {
                     DBHandler dbHandler = new DBHandler(getApplicationContext());
                     long newID = dbHandler.addInfo(username.getText().toString(), userFName.getText().toString(), userLName.getText().toString(), userEmail.getText().toString(), phone.getText().toString(), password.getText().toString(), city.getText().toString());
