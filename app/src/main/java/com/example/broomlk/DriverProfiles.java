@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,20 +51,42 @@ public class DriverProfiles extends AppCompatActivity {
                 else{
                     gender="Female";
                 }
-                DBRHandler dbrHandler = new DBRHandler(getApplicationContext());
-                Long newID = dbrHandler.addInfo(drivername.getText().toString(),dob.getText().toString(),password.getText().toString(),nic.getText().toString(),age.getText().toString(),gender);
-                Toast.makeText(DriverProfiles.this, "Driver Added. User ID:"+newID, Toast.LENGTH_SHORT).show();
+                if(TextUtils.isEmpty(drivername.getText())){
+                    drivername.setError("Please Enter User Name");
+                    drivername.requestFocus();
+                }
+                else if(TextUtils.isEmpty(dob.getText())){
+                    dob.setError("Please Enter BirthDay");
+                    dob.requestFocus();
+                }
+                else if(TextUtils.isEmpty(password.getText())){
+                    password.setError("Please Enter password");
+                    password.requestFocus();
+                }
+                else if(TextUtils.isEmpty(nic.getText())){
+                    nic.setError("Please Enter NIC");
+                    nic.requestFocus();
+                }
+                else if(TextUtils.isEmpty(age.getText())){
+                    age.setError("Please Enter Age");
+                    age.requestFocus();
+                }
+                else {
+                    DBRHandler dbrHandler = new DBRHandler(getApplicationContext());
+                    Long newID = dbrHandler.addInfo(drivername.getText().toString(), dob.getText().toString(), password.getText().toString(), nic.getText().toString(), age.getText().toString(), gender);
+                    Toast.makeText(DriverProfiles.this, "Driver Added. User ID:" + newID, Toast.LENGTH_SHORT).show();
 
-                Intent i = new Intent(getApplicationContext(),EdiPro.class);
-                startActivity(i);
+                    Intent i = new Intent(getApplicationContext(), EdiPro.class);
+                    startActivity(i);
 
-                drivername.setText(null);
-                dob.setText(null);
-                password.setText(null);
-                nic.setText(null);
-                age.setText(null);
-                male.setChecked(false);
-                female.setChecked(false);
+                    drivername.setText(null);
+                    dob.setText(null);
+                    password.setText(null);
+                    nic.setText(null);
+                    age.setText(null);
+                    male.setChecked(false);
+                    female.setChecked(false);
+                }
             }
         });
     }

@@ -248,7 +248,7 @@ public class DBRHandler extends SQLiteOpenHelper {
 
         }
         cursor.close();
-        if(validUser.isEmpty()){
+        if(validUser==null){
             return false;
         }
         else{

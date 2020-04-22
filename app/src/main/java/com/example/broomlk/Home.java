@@ -34,18 +34,19 @@ public class Home extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  DBRHandler dbrHandler = new DBRHandler(getApplicationContext());
-               // if(dbrHandler.LoginUser(username.getText().toString(),password.getText().toString())){
+                DBRHandler dbrHandler = new DBRHandler(getApplicationContext());
+                if(dbrHandler.LoginUser(username.getText().toString(),password.getText().toString())){
                     Toast.makeText(Home.this, "Logged in Success !", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(getApplicationContext(),DriverList.class);
                     startActivity(i);
-              //  }
-              //  else {
-               //     Toast.makeText(Home.this, "No valid User !", Toast.LENGTH_SHORT).show();
-              //  }
+                }
+                else {
+                    Toast.makeText(Home.this, "No valid User !", Toast.LENGTH_SHORT).show();
+                }
 
 
             }
         });
     }
 }
+
