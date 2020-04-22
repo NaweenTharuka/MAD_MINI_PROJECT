@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+//admin panel main homepage
+//admin can select driver or vehicle registration
 public class Adminpanel extends AppCompatActivity {
 
     @Override
@@ -14,9 +16,10 @@ public class Adminpanel extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adminpanel);
 
-        Button adddriver = (Button) findViewById(R.id.driver);
-        Button addvehicle = (Button) findViewById(R.id.vehicle);
+        Button adddriver = (Button) findViewById(R.id.driver); //cast Driver Registration button
+        Button addvehicle = (Button) findViewById(R.id.vehicle); //cast Vehicle Registration button
 
+        // link to vehicle registration Home Page
         addvehicle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -24,6 +27,8 @@ public class Adminpanel extends AppCompatActivity {
                 startActivity(continueIntent);
             }
         });
+
+        // link to Driver Registration Home Page
         adddriver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+// vehicle Registration Home Page
 public class AdminView extends AppCompatActivity {
     VehicleDatabase mydb1;
     Button viewbtn;
@@ -18,15 +19,15 @@ public class AdminView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_view);
 
-        mydb1 = new VehicleDatabase(this);
-        viewbtn = (Button)findViewById(R.id.btn6);
-        ViewAll();
+        mydb1 = new VehicleDatabase(this); // call for VehicleDataBase
+        viewbtn = (Button)findViewById(R.id.btn6); //cast View all vehicle details button
+        ViewAll(); // call for ViewAll() method
 
-        Button addbtn = (Button) findViewById(R.id.Btn4);
-        Button editbtn = (Button)findViewById(R.id.btn5);
-        Button delbtn = (Button)findViewById(R.id.btn7);
-        Button viewbtn = (Button)findViewById(R.id.btn6);
+        Button addbtn = (Button) findViewById(R.id.Btn4); //cast Add vehicle button
+        Button editbtn = (Button)findViewById(R.id.btn5); //cast Edit vehicle details button
+        Button delbtn = (Button)findViewById(R.id.btn7); //cast Delete vehicle Button
 
+        // link to add vehicle page
         addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,6 +35,8 @@ public class AdminView extends AppCompatActivity {
                 startActivity(continueIntent);
             }
         });
+
+        //link to edit vehicle page
         editbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +45,7 @@ public class AdminView extends AppCompatActivity {
             }
         });
 
+        //link to delete vehicle page
         delbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,6 +55,7 @@ public class AdminView extends AppCompatActivity {
         });
     }
 
+    // method to view all vehicle details
     public void ViewAll(){
         viewbtn.setOnClickListener(
                 new View.OnClickListener() {
@@ -63,7 +68,7 @@ public class AdminView extends AppCompatActivity {
                         }
 
                         StringBuffer buffer = new StringBuffer();
-                        while(res.moveToNext()){
+                        while(res.moveToNext()){ //view all data one by one
                             buffer.append("Id :"+ res.getString(0 )+ "\n" );
                             buffer.append("Veh Type :"+ res.getString(1 )+ "\n" );
                             buffer.append("Owner Name :"+ res.getString(2 )+ "\n" );
@@ -77,6 +82,7 @@ public class AdminView extends AppCompatActivity {
         );
     }
 
+    // create method to show message
     public  void ShowMessage(String title,String Message){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);

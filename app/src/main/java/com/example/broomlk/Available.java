@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+//available vehicle page
 public class Available extends AppCompatActivity {
 
     @Override

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+//Delete Vehicle Page
 public class DeleteVeh extends AppCompatActivity {
     VehicleDatabase mydb2;
     EditText eId;
@@ -18,24 +19,25 @@ public class DeleteVeh extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_veh);
 
-        mydb2 = new VehicleDatabase(this);
-        eId = (EditText)findViewById(R.id.et13);
-        delbtn = (Button) findViewById(R.id.delbtn);
+        mydb2 = new VehicleDatabase(this); //call for VehicleDatabase
+        eId = (EditText)findViewById(R.id.et13); // cast delete vehicle ID
+        delbtn = (Button) findViewById(R.id.delbtn); //cast delete vehicle button
 
-        DeleteData();
+        DeleteData(); //call for DeleteData method
 
     }
 
+    //method for delete vehicle
     public void DeleteData(){
         delbtn.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Integer deleteRows = mydb2.deleteData(eId.getText().toString());
-                        if(deleteRows > 0)
-                            Toast.makeText(DeleteVeh.this, "Data Deleted !!", Toast.LENGTH_SHORT).show();
+                        Integer deleteRows = mydb2.deleteData(eId.getText().toString()); // parse delete vehicle ID to DB
+                        if(deleteRows > 0) //check whether all rows are deleted or not
+                            Toast.makeText(DeleteVeh.this, "Data Deleted !!", Toast.LENGTH_SHORT).show(); //show success toast message
                         else
-                            Toast.makeText(DeleteVeh.this, "Data not Deleted !!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DeleteVeh.this, "Data not Deleted !!", Toast.LENGTH_SHORT).show(); //show unsuccess toast message
                     }
                 }
         );

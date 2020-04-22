@@ -8,23 +8,25 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+//Vehicle Database
 public class VehicleDatabase extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "Vehicle.db";
-    public static final String TABLE_NAME = "vehicle_table";
-    public static final String COL_1 = "ID";
-    public static final String COL_2 = "VTYPE";
-    public static final String COL_3 = "ONAME";
-    public static final String COL_4 = "ONIC";
-    public static final String COL_5 = "VNUMBER";
-    public static final String COL_6 = "VENGNUM";
+    public static final String DATABASE_NAME = "Vehicle.db"; //define Database Name
+    public static final String TABLE_NAME = "vehicle_table"; //define Table Name
+    public static final String COL_1 = "ID"; //define column 1: ID
+    public static final String COL_2 = "VTYPE"; //define column 2: vehicle type
+    public static final String COL_3 = "ONAME"; //define column 3: owner name
+    public static final String COL_4 = "ONIC"; //define column 4: Owner NIC
+    public static final String COL_5 = "VNUMBER"; //define column 5: Vehicle Number
+    public static final String COL_6 = "VENGNUM"; //define column 6: Vehicle engine Number
 
     public VehicleDatabase(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
 
+    //create database
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT,VTYPE TEXT,ONAME TEXT,ONIC TEXT,VNUMBER TEXT,VENGNUM TEXT)");
+        db.execSQL("create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT,VTYPE TEXT,ONAME TEXT,ONIC TEXT,VNUMBER TEXT,VENGNUM TEXT)");//create table
     }
 
     @Override
@@ -33,6 +35,7 @@ public class VehicleDatabase extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    //method for insert Data
     public boolean inserData(String vtype,String oname,String onic,String vnumber,String vengnum){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -48,12 +51,14 @@ public class VehicleDatabase extends SQLiteOpenHelper {
             return true;
     }
 
+    //method for view All data
     public Cursor getAllData(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
         return  res;
     }
 
+    //method for Update data
     public boolean updateData(String id,String vtype,String oname,String onic,String vnumber,String vengnum){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -68,6 +73,7 @@ public class VehicleDatabase extends SQLiteOpenHelper {
 
     }
 
+    //method for delete data
     public Integer deleteData(String id){
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(TABLE_NAME, "ID = ?",new String[] { id });
