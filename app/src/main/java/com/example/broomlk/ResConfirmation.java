@@ -153,7 +153,7 @@ public class ResConfirmation extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (TextUtils.isEmpty(pNo.getText())) {
-                    pNo.setError("Search your Phone Number to Edit or Confirm Your Reservation!");
+                    pNo.setError("Please Search your Phone Number!");
                     pNo.requestFocus();
                 } else {
 
@@ -179,7 +179,7 @@ public class ResConfirmation extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(TextUtils.isEmpty(pNo.getText())){
-                    pNo.setError("Search Valid Phone Number to Delete Your Reservation!");
+                    pNo.setError("Please Search your Phone Number!");
                     pNo.requestFocus();}
                 else {
 

@@ -12,109 +12,151 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/available" />
 
-    <Button
-        android:id="@+id/book1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="107dp"
+        android:layout_height="50dp"
         android:background="#26A69A"
-        android:text="@string/btnBook"
+        android:text="Rs.8000                                        (Per 24 hours)  200KM"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
-        app:layout_constraintStart_toStartOf="@+id/imageView10"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.446" />
-
-    <Button
-        android:id="@+id/book2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#26A69A"
-        android:text="@string/btnBook"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.702" />
+        app:layout_constraintVertical_bias="0.963" />
 
-    <Button
-        android:id="@+id/book3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="107dp"
+        android:layout_height="50dp"
         android:background="#26A69A"
-        android:text="@string/btnBook"
+        android:text="Rs.9500                                        (Per 24 hours)  200KM"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.885"
+        app:layout_constraintHorizontal_bias="0.822"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.446" />
+        app:layout_constraintVertical_bias="0.963" />
 
-    <Button
-        android:id="@+id/book4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="107dp"
+        android:layout_height="50dp"
         android:background="#26A69A"
-        android:text="@string/btnBook"
+        android:text="Rs.5000                                        (Per 24 hours)  250KM"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintHorizontal_bias="0.917"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.702" />
+        app:layout_constraintVertical_bias="0.684" />
 
-    <Button
-        android:id="@+id/book5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="107dp"
+        android:layout_height="50dp"
         android:background="#26A69A"
-        android:text="@string/btnBook"
+        android:text="Rs.5000                                        (Per 24 hours)  250KM"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.446" />
+        app:layout_constraintVertical_bias="0.684" />
 
-    <Button
-        android:id="@+id/book6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="107dp"
+        android:layout_height="50dp"
         android:background="#26A69A"
-        android:text="@string/btnBook"
+        android:text="Rs.3500                                        (Per 24 hours)  250KM"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.885"
+        app:layout_constraintHorizontal_bias="0.023"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.702" />
+        app:layout_constraintVertical_bias="0.684" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="107dp"
+        android:layout_height="50dp"
+        android:background="#26A69A"
+        android:text="Rs.4500                                        (Per 24 hours)  250KM"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.917"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.433" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="107dp"
+        android:layout_height="50dp"
+        android:background="#26A69A"
+        android:text="Rs.3000                                        (Per 24 hours)  250KM"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.433" />
 
     <Button
-        android:id="@+id/book7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:id="@+id/book"
+        android:layout_width="212dp"
+        android:layout_height="35dp"
         android:background="#26A69A"
         android:text="@string/btnBook"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.238"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.183" />
 
-    <Button
-        android:id="@+id/book8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="107dp"
+        android:layout_height="50dp"
         android:background="#26A69A"
-        android:text="@string/btnBook"
+        android:text="Rs.4000                                        (Per 24 hours)  250KM"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.693"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.433" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -136,13 +136,13 @@ public class ReservationDatabase extends SQLiteOpenHelper {
                 ResProfile.Res.COL_1 + " ASC";
 
         Cursor cursor = db.query(
-                ResProfile.Res.TABLE_NAME,   // The table to query
-                projection,             // The array of columns to return (pass null to get all)
-                selection,              // The columns for the WHERE clause
-                selectionArgs,          // The values for the WHERE clause
-                null,                   // don't group the rows
-                null,                   // don't filter by row groups
-                sortOrder               // The sort order
+                ResProfile.Res.TABLE_NAME,
+                projection,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                sortOrder
         );
 
         List Reservationinfo = new ArrayList<>();
