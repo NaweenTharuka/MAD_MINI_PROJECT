@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+//Driver profile home page
 public class Home extends AppCompatActivity {
 
     EditText username,password;

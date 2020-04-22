@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+//Customer feedback
 public class CustomerFeedbacks extends AppCompatActivity {
     FeedbacksDatabase fedDb;
     private Spinner sp3, sp4;
@@ -25,16 +26,17 @@ public class CustomerFeedbacks extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_feedbacks);
-        fedDb = new FeedbacksDatabase(this);
-        sp3 = (Spinner) findViewById(R.id.spinner3);
-        sp4 = (Spinner) findViewById(R.id.spinner4);
-        Button skip = (Button) findViewById(R.id.fedSkip);
-        fAdd = (Button) findViewById(R.id.fedAdd);
-        fView = (Button) findViewById(R.id.fedView);
-        fEdit = (Button) findViewById(R.id.fededitbtn);
-        fDel = (Button) findViewById(R.id.fedDel);
-        other = (EditText)findViewById(R.id.fedOther);
-        editId= (EditText)findViewById(R.id.fededit);
+        fedDb = new FeedbacksDatabase(this);// call for data base
+        sp3 = (Spinner) findViewById(R.id.spinner3); //cast C satisfaction
+        sp4 = (Spinner) findViewById(R.id.spinner4); //cast C rating
+        other = (EditText)findViewById(R.id.fedOther); //cast other msg
+
+        Button skip = (Button) findViewById(R.id.fedSkip); //cast Skip button
+        fAdd = (Button) findViewById(R.id.fedAdd); //cast Add feedback button
+        fView = (Button) findViewById(R.id.fedView); //cast View feedback button
+        fEdit = (Button) findViewById(R.id.fededitbtn); //cast Edit feedback button
+        fDel = (Button) findViewById(R.id.fedDel); //cast delete feedback button
+        editId= (EditText)findViewById(R.id.fededit); //cast Edit feedback button
 
         AddData();
         ViewAll();
@@ -49,12 +51,13 @@ public class CustomerFeedbacks extends AppCompatActivity {
             }
         });
 
+        //array for satisfaction dropdown values
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(CustomerFeedbacks.this,
                 android.R.layout.simple_expandable_list_item_1, getResources().getStringArray(R.array.feedback));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp3.setAdapter(myAdapter);
 
-
+        //array for rating dropdown values
         ArrayAdapter<String> myAdapter1 = new ArrayAdapter<String>(CustomerFeedbacks.this,
                 android.R.layout.simple_expandable_list_item_1, getResources().getStringArray(R.array.rating));
         myAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -62,6 +65,7 @@ public class CustomerFeedbacks extends AppCompatActivity {
 
     }
 
+    //add data method
     public void AddData(){
         fAdd.setOnClickListener(
                 new View.OnClickListener() {
@@ -82,6 +86,7 @@ public class CustomerFeedbacks extends AppCompatActivity {
         );
     }
 
+    //View All data method
     public void ViewAll(){
         fView.setOnClickListener(
                 new View.OnClickListener() {
@@ -105,6 +110,7 @@ public class CustomerFeedbacks extends AppCompatActivity {
                 }
         );
     }
+    //method for show message
     public void showMessage(String title,String message){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
@@ -113,6 +119,7 @@ public class CustomerFeedbacks extends AppCompatActivity {
         builder.show();
     }
 
+    //Update data method
     public void UpdateData(){
         fEdit.setOnClickListener(
                 new View.OnClickListener() {
@@ -128,6 +135,7 @@ public class CustomerFeedbacks extends AppCompatActivity {
         );
     }
 
+    //Delete data method
     public void DeleteData(){
         fDel.setOnClickListener(
                 new View.OnClickListener() {

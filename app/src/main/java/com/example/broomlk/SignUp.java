@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+//signup data
 public class SignUp extends AppCompatActivity {
 
     EditText username, userFName,userLName,userEmail,phone, password,city ;
@@ -21,14 +22,14 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        username = findViewById(R.id.usertxt);
-        userFName = findViewById(R.id.Fname);
-        userLName = findViewById(R.id.Lname);
-        userEmail = findViewById(R.id.emailInput);
-        phone = findViewById(R.id.editText4);
-        password = findViewById(R.id.editText5);
-        city = findViewById(R.id.cityInput);
-        submit= findViewById(R.id.btnsub);
+        username = findViewById(R.id.usertxt); //cast user name
+        userFName = findViewById(R.id.Fname); //cast user first name
+        userLName = findViewById(R.id.Lname); //cast user last name
+        userEmail = findViewById(R.id.emailInput); //cast user Email
+        phone = findViewById(R.id.editText4); //cast phone number
+        password = findViewById(R.id.editText5); //cast password
+        city = findViewById(R.id.cityInput); //cast city
+        submit= findViewById(R.id.btnsub); //cast submit button
 
 
 
@@ -37,7 +38,7 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(TextUtils.isEmpty(username.getText())){
-                    username.setError("Please Enter User Name");
+                    username.setError("Please Enter User Name"); //validate all data are inserted
                     username.requestFocus();
                 }
                 else if(TextUtils.isEmpty(userFName.getText())){

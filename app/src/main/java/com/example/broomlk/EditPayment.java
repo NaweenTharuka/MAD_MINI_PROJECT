@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+//Edit payment details
 public class EditPayment extends AppCompatActivity {
 
     EditText holdername, cardnum, exdate,cvvnum ;
@@ -21,16 +22,16 @@ public class EditPayment extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_payment);
 
-        holdername = findViewById(R.id.edholder);
-        cardnum = findViewById(R.id.edcnum);
-        exdate = findViewById(R.id.eddate);
-        cvvnum =  findViewById(R.id.edcv);
-        edit = findViewById(R.id.edpbtn);
-        delete = findViewById(R.id.pedbtn);
-        search = findViewById(R.id.edpsearch);
+        holdername = findViewById(R.id.edholder); //cast card holder name
+        cardnum = findViewById(R.id.edcnum); //cast card number
+        exdate = findViewById(R.id.eddate); //cast expire date
+        cvvnum =  findViewById(R.id.edcv); //cast cvv number
+        edit = findViewById(R.id.edpbtn); //cast edit button
+        delete = findViewById(R.id.pedbtn); //cast delete button
+        search = findViewById(R.id.edpsearch); //cast search button
 
 
-
+        //validate data from card holder name
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,6 +58,7 @@ public class EditPayment extends AppCompatActivity {
             }
         });
 
+        //Update data method
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,6 +77,7 @@ public class EditPayment extends AppCompatActivity {
         });
 
 
+        //Delete data method
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

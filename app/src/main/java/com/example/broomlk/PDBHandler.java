@@ -10,11 +10,12 @@ import android.provider.BaseColumns;
 import java.util.ArrayList;
 import java.util.List;
 
+//payment details database
 public class PDBHandler extends SQLiteOpenHelper {
 
     // If you change the database schema, you must increment the database version.
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "PaymentDB.db";
+    public static final String DATABASE_NAME = "PaymentDB.db"; //define databse name
 
     public PDBHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -43,6 +44,7 @@ public class PDBHandler extends SQLiteOpenHelper {
     private static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS " + PProfile.Payments.TABLE_NAME;
 
+    //add data
     public long addInfo (String holdername, String cardnum, String exdate, String cvvnum){
         // Gets the data repository in write mode
         SQLiteDatabase db = getWritableDatabase();
@@ -61,6 +63,7 @@ public class PDBHandler extends SQLiteOpenHelper {
 
     }
 
+    //update data
     public Boolean updateInfo (String holdername, String cardnum, String exdate, String cvvnum){
 
         SQLiteDatabase db = getWritableDatabase();
@@ -90,6 +93,7 @@ public class PDBHandler extends SQLiteOpenHelper {
 
     }
 
+    //delete data
     public void deleteInfo (String holdername){
 
         SQLiteDatabase db = getWritableDatabase();
@@ -105,7 +109,7 @@ public class PDBHandler extends SQLiteOpenHelper {
     }
 
 
-
+    //view all data
     public List readAllInfo (String holdername){
 
         SQLiteDatabase db = getReadableDatabase();

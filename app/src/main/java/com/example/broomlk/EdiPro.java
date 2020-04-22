@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+//Edit driver profile
 public class EdiPro extends AppCompatActivity {
     EditText drivername,dob,password,nic,age;
     Button submit,delete,search;
@@ -34,6 +35,7 @@ public class EdiPro extends AppCompatActivity {
         male = findViewById(R.id.radioButton5);
         female = findViewById(R.id.radioButton6);
 
+        //search driver details
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +64,7 @@ public class EdiPro extends AppCompatActivity {
             }
         });
 
+        //update driver details
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,6 +87,8 @@ public class EdiPro extends AppCompatActivity {
                 }
             }
         });
+
+        //delete driver profile
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+//End of vehicle reservation
 public class LastPage extends AppCompatActivity {
 
     @Override

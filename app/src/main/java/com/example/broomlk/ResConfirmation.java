@@ -21,6 +21,7 @@ import android.widget.Toast;
 import java.util.Calendar;
 import java.util.List;
 
+//Reservation details update
 public class ResConfirmation extends AppCompatActivity {
     private static final String TAG = "ResConfirmation";
     private TextView pD, rD;
@@ -34,14 +35,14 @@ public class ResConfirmation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_res_confirmation);
-        pD = (TextView) findViewById(R.id.pDate);
-        rD = (TextView) findViewById(R.id.rDate);
-        pNo =(EditText) findViewById(R.id.editphone);
-        s1 = (Spinner) findViewById(R.id.spinner1);
-        s2 = (Spinner) findViewById(R.id.spinner2);
-        b4 = (Button) findViewById(R.id.btnsubmit);
-        b5 = (Button) findViewById(R.id.btndel);
-        b6 = (Button) findViewById(R.id.btnsearch);
+        pD = (TextView) findViewById(R.id.pDate); //cast pickup date
+        rD = (TextView) findViewById(R.id.rDate); //cast return date
+        pNo =(EditText) findViewById(R.id.editphone); //cast phone number
+        s1 = (Spinner) findViewById(R.id.spinner1); //cast vehicle model
+        s2 = (Spinner) findViewById(R.id.spinner2); //cast vehicle sub model
+        b4 = (Button) findViewById(R.id.btnsubmit); //cast submit button
+        b5 = (Button) findViewById(R.id.btndel); //cast delete reservation button
+        b6 = (Button) findViewById(R.id.btnsearch); //cast search reservation button
 
 
 
@@ -119,21 +120,21 @@ public class ResConfirmation extends AppCompatActivity {
 
 
 
-
+        //update reservation details
         b6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 ReservationDatabase reservationDatabase = new ReservationDatabase(getApplicationContext());
-                List phonenumber = reservationDatabase.readAllInfo(pNo.getText().toString());
+                List phonenumber = reservationDatabase.readAllInfo(pNo.getText().toString()); //get data from reservation phone number
 
-                if (phonenumber.isEmpty()){
-                    Toast.makeText(ResConfirmation.this, "No Reservation", Toast.LENGTH_SHORT).show();
+                if (phonenumber.isEmpty()){ //check whether phone number is Empty
+                    Toast.makeText(ResConfirmation.this, "No Reservation", Toast.LENGTH_SHORT).show(); //toast message for empty details
                     pNo.setText(null);
                 }
                 else {
 
-                    Toast.makeText(ResConfirmation.this, "Reservation Details Found.....!    Mobile Number: "+phonenumber.get(0).toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ResConfirmation.this, "Reservation Details Found.....!    Mobile Number: "+phonenumber.get(0).toString(), Toast.LENGTH_SHORT).show(); //toast message for successfully found details
                     pNo.setText(phonenumber.get(0).toString());
                     pD.setText(phonenumber.get(1).toString());
                     rD.setText(phonenumber.get(2).toString());
@@ -148,6 +149,7 @@ public class ResConfirmation extends AppCompatActivity {
             }
         });
 
+        //search data from phone number
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -157,17 +159,15 @@ public class ResConfirmation extends AppCompatActivity {
                     pNo.requestFocus();
                 } else {
 
-
-
                 ReservationDatabase reservationDatabase = new ReservationDatabase(getApplicationContext());
 
                 Boolean status = reservationDatabase.updateInfo(pNo.getText().toString(), pD.getText().toString(), rD.getText().toString(), s1.getSelectedItem().toString(), s1.getSelectedItem().toString());
                 if (status) {
-                    Toast.makeText(ResConfirmation.this, "Reservation Details Updated", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ResConfirmation.this, "Reservation Details Updated", Toast.LENGTH_SHORT).show(); // toast message for successfully updated
                     Intent i = new Intent(getApplicationContext(), Payment.class);
                     startActivity(i);
                 } else {
-                    Toast.makeText(ResConfirmation.this, "Reservation Update Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ResConfirmation.this, "Reservation Update Failed", Toast.LENGTH_SHORT).show(); //toast message for successfully deleted
                 }
             }
             }
@@ -187,7 +187,7 @@ public class ResConfirmation extends AppCompatActivity {
                     reservationDatabase.deleteInfo(pNo.getText().toString());
 
 
-                    Toast.makeText(ResConfirmation.this, "Reservation Details Deleted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ResConfirmation.this, "Reservation Details Deleted", Toast.LENGTH_SHORT).show(); //toast message for successfully delete reservation
                     Intent i = new Intent(getApplicationContext(), Available.class);
                     startActivity(i);
 

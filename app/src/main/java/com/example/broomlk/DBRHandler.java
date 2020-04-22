@@ -11,10 +11,11 @@ import android.provider.BaseColumns;
 import java.util.ArrayList;
 import java.util.List;
 
+//Drivers data base
 public class DBRHandler extends SQLiteOpenHelper {
     // If you change the database schema, you must increment the database version.
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "Database.db";
+    public static final String DATABASE_NAME = "Database.db"; //define Data base name
 
     public DBRHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

@@ -13,6 +13,7 @@ import java.util.List;
 
 import static com.example.broomlk.R.id.fnameinput;
 
+//Edit User details method
 public class EditUser extends AppCompatActivity {
 
     EditText username, userFName,userLName,userEmail,phone, password,city ;
@@ -24,17 +25,18 @@ public class EditUser extends AppCompatActivity {
         setContentView(R.layout.activity_edit_user);
 
 
-        username = findViewById(R.id.eduser);
-        userFName = findViewById(fnameinput);
-        userLName = findViewById(R.id.Lname);
-        userEmail = findViewById(R.id.emailInput);
-        phone = findViewById(R.id.phoneinput);
-        password = findViewById(R.id.passwordinput);
-        city = findViewById(R.id.cityInput);
-        delete = findViewById(R.id.d65btn);
-        submit= findViewById(R.id.buttonsub);
-        search = findViewById(R.id.edsearch);
+        username = findViewById(R.id.eduser);//cast user name
+        userFName = findViewById(fnameinput);//cast user's first name
+        userLName = findViewById(R.id.Lname); //cast user's last name
+        userEmail = findViewById(R.id.emailInput); //cast user email
+        phone = findViewById(R.id.phoneinput); //cast phone number
+        password = findViewById(R.id.passwordinput); //cast password
+        city = findViewById(R.id.cityInput); //cast user's city
+        delete = findViewById(R.id.d65btn); //cast delete button
+        submit= findViewById(R.id.buttonsub); //cast submit buuton
+        search = findViewById(R.id.edsearch); //cast search
 
+        //validate user details
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,6 +64,7 @@ public class EditUser extends AppCompatActivity {
             }
         });
 
+        //update user details
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,7 +85,7 @@ public class EditUser extends AppCompatActivity {
             }
         });
 
-
+        //delete user details method
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

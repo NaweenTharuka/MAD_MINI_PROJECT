@@ -8,14 +8,15 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+//Customer Feedback database
 public class FeedbacksDatabase extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "Feedback.db";
-    public static final String TABLE_NAME = "feedback";
-    public static final String COL_1 = "ID";
-    public static final String COL_2 = "FEEDBACK";
-    public static final String COL_3 = "RATE";
-    public static final String COL_4 = "OTHER";
+    public static final String DATABASE_NAME = "Feedback.db"; //define database name
+    public static final String TABLE_NAME = "feedback"; //define table name
+    public static final String COL_1 = "ID"; //define column 1: feedback ID
+    public static final String COL_2 = "FEEDBACK"; //define column 2: Customer satisfaction
+    public static final String COL_3 = "RATE"; //define column 3: customer rating
+    public static final String COL_4 = "OTHER"; //define column 4: Other msg
 
     //constructor for create table & Database
     public FeedbacksDatabase(@Nullable Context context) {
@@ -33,6 +34,7 @@ public class FeedbacksDatabase extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    //insert data method
     public boolean inserData(String feedback,String rating,String other){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -46,12 +48,14 @@ public class FeedbacksDatabase extends SQLiteOpenHelper {
             return true;
     }
 
+    //View All data method
     public Cursor getAllData(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+ TABLE_NAME,null);
         return res;
     }
 
+    //update data method
     public boolean updateData(String id,String feedback,String rating,String other){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -63,6 +67,7 @@ public class FeedbacksDatabase extends SQLiteOpenHelper {
         return true;
     }
 
+    //delete data method
     public Integer deleteData(String id){
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(TABLE_NAME, "ID = ?",new String[] { id });

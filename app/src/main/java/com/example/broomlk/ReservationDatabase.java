@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
+//Vehicle reservation Database
 public class ReservationDatabase extends SQLiteOpenHelper {
     public static final int VERSION = 1;
     public static final String Database_NAME = "ReservationDB";
@@ -20,6 +21,7 @@ public class ReservationDatabase extends SQLiteOpenHelper {
         super(context, Database_NAME, null, VERSION);
     }
 
+    //creating database
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_ENTRIES);
@@ -34,6 +36,7 @@ public class ReservationDatabase extends SQLiteOpenHelper {
         onUpgrade(db, oldVersion, newVersion);
     }
 
+    //create table
     private static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE " + ResProfile.Res.TABLE_NAME + " (" +
                     ResProfile.Res._ID + " INTEGER PRIMARY KEY," +
@@ -47,6 +50,7 @@ public class ReservationDatabase extends SQLiteOpenHelper {
             "DROP TABLE IF EXISTS " + ResProfile.Res.TABLE_NAME;
 
 
+    //insert data
     public long addInfo (String phonenumber, String pickupdate, String returndate, String modle,String submodle){
         // Gets the data repository in write mode
         SQLiteDatabase db = getWritableDatabase();
@@ -66,6 +70,7 @@ public class ReservationDatabase extends SQLiteOpenHelper {
 
     }
 
+    //update method
     public Boolean updateInfo (String phonenumber, String pickupdate, String returndate, String modle,String submodle){
 
         SQLiteDatabase db = getWritableDatabase();
@@ -96,6 +101,7 @@ public class ReservationDatabase extends SQLiteOpenHelper {
 
     }
 
+    //delete data
     public void deleteInfo (String phonenumber){
 
         SQLiteDatabase db = getWritableDatabase();
@@ -106,10 +112,9 @@ public class ReservationDatabase extends SQLiteOpenHelper {
         String[] selectionArgs = { phonenumber };
         // Issue SQL statement.
         int deletedRows = db.delete(ResProfile.Res.TABLE_NAME, selection, selectionArgs);
-
-
     }
 
+    //view data
     public List readAllInfo (String phonenumber){
 
         SQLiteDatabase db = getReadableDatabase();

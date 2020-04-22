@@ -10,14 +10,16 @@ import android.provider.BaseColumns;
 import java.util.ArrayList;
 import java.util.List;
 
+//user profile DB
 public class DBHandler extends SQLiteOpenHelper {
 
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "User.db";
+    public static final String DATABASE_NAME = "User.db"; //define database name
     public DBHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    //constructor for create Database
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_ENTRIES);
@@ -48,7 +50,7 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS " + UserProfile.Users.TABLE_NAME;
 
-
+    //Add data
     public long addInfo (String userName, String userFName, String userLName, String userEmail, String phone, String password, String city){
         // Gets the data repository in write mode
         SQLiteDatabase db = getWritableDatabase();
@@ -70,7 +72,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
     }
 
-
+    //Update data
     public Boolean updateInfo (String username, String userFName, String userLName, String userEmail, String phone, String password, String city){
 
         SQLiteDatabase db = getWritableDatabase();
@@ -103,7 +105,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
     }
 
-
+    //delete data
     public void deleteInfo (String username){
 
         SQLiteDatabase db = getWritableDatabase();
@@ -118,7 +120,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
     }
 
-
+    //view all data
     public List readAllInfo (String username){
 
         SQLiteDatabase db = getReadableDatabase();

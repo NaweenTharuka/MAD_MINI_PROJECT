@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
+//Vehicle Reservation
 public class Reservation extends AppCompatActivity {
     private static final String TAG = "Reservation";
 
@@ -35,14 +36,16 @@ public class Reservation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation);
 
-        pD = (TextView) findViewById(R.id.pDate);
-        rD = (TextView) findViewById(R.id.rDate);
-        pNo = (EditText) findViewById(R.id.phone);
-        s1 = (Spinner) findViewById(R.id.spinner1);
-        s2 = (Spinner) findViewById(R.id.spinner2);
-        b1 = (Button) findViewById(R.id.btnadd);
-        //b2 = (Button) findViewById(R.id.btnview);
-        b3 = (Button) findViewById(R.id.btnedit);
+        pD = (TextView) findViewById(R.id.pDate); //cast pickup date
+        rD = (TextView) findViewById(R.id.rDate); //cast Return Date
+        pNo = (EditText) findViewById(R.id.phone); //cast Phone number
+        s1 = (Spinner) findViewById(R.id.spinner1); //cast vehicle model
+        s2 = (Spinner) findViewById(R.id.spinner2); //cast vehicle sub model
+
+        b1 = (Button) findViewById(R.id.btnadd); //cast Add Reservation Button
+        b3 = (Button) findViewById(R.id.btnedit); //cast Edit Reservation
+
+        //link to Edit reservation
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +54,7 @@ public class Reservation extends AppCompatActivity {
             }
         });
 
-
+        //calender view for pickup and return date
         pD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,21 +78,20 @@ public class Reservation extends AppCompatActivity {
             public void onDateSet(DatePicker view, int year, int month, int day) {
                 Log.d(TAG, "OnDateSet:mm/dd/yyyy:" + month + "/" + day + "/" + year);
 
-                String date = month + "/" + day + "/" + year;
-                pD.setText(date);
+                String date = month + "/" + day + "/" + year; //get date from calender
+                pD.setText(date); //set date to string
 
 
             }
         };
 
-
         rD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Calendar cal = Calendar.getInstance();
-                int year = cal.get(Calendar.YEAR);
-                int month = cal.get(Calendar.MONTH);
-                int day = cal.get(Calendar.DAY_OF_MONTH);
+                int year = cal.get(Calendar.YEAR); //get year
+                int month = cal.get(Calendar.MONTH); //get month
+                int day = cal.get(Calendar.DAY_OF_MONTH); //get date
 
                 DatePickerDialog dialog = new DatePickerDialog(
                         Reservation.this,
@@ -100,6 +102,7 @@ public class Reservation extends AppCompatActivity {
                 dialog.show();
             }
         });
+
         DataSetListner2 = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day) {
@@ -108,42 +111,39 @@ public class Reservation extends AppCompatActivity {
                 String date = month + "/" + day + "/" + year;
                 rD.setText(date);
 
-
             }
         };
 
+        //define array to values for vehicle model dropdown
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(Reservation.this,
                 android.R.layout.simple_expandable_list_item_1, getResources().getStringArray(R.array.Cars));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s1.setAdapter(myAdapter);
 
-
+        //define array to values for vehicle sub model dropdown
         ArrayAdapter<String> myAdapter1 = new ArrayAdapter<String>(Reservation.this,
                 android.R.layout.simple_expandable_list_item_1, getResources().getStringArray(R.array.model));
         myAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s2.setAdapter(myAdapter1);
 
-
-
-
-
+        //get reservation details
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(TextUtils.isEmpty(pD.getText())){
-                    pD.setError("Enter Pick-Up Date!");
+                    pD.setError("Enter Pick-Up Date!"); //check whether pickup date is entered
                     pD.requestFocus();}
                 else if(TextUtils.isEmpty(rD.getText())){
-                        rD.setError("Enter Return Date!");
+                        rD.setError("Enter Return Date!"); //check whether return date is entered
                         rD.requestFocus(); }
                 else if(TextUtils.isEmpty(pNo.getText())){
-                        pNo.setError("Enter Your Phone Number!");
+                        pNo.setError("Enter Your Phone Number!"); //check whether phone number is entered
                         pNo.requestFocus(); }
                 else {
 
                     ReservationDatabase reservationDatabase = new ReservationDatabase(getApplicationContext());
                     long newID = reservationDatabase.addInfo(pNo.getText().toString(), pD.getText().toString(), rD.getText().toString(), s1.getSelectedItem().toString(), s2.getSelectedItem().toString());
-                    Toast.makeText(Reservation.this, "Reservation Successfully......!    Reservation ID: " + newID, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Reservation.this, "Reservation Successfully......!    Reservation ID: " + newID, Toast.LENGTH_SHORT).show(); //success toast message with reservation ID
 
                     Intent i = new Intent(getApplicationContext(), ResConfirmation.class);
                     startActivity(i);

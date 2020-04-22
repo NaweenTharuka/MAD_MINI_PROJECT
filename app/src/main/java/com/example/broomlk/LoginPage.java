@@ -15,19 +15,20 @@ public class LoginPage extends AppCompatActivity {
     EditText username,password;
     Button login;
 
-
+//Login page
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
 
 
-        username = findViewById(R.id.lusername);
-        password = findViewById(R.id.lpassword);
-        login = findViewById(R.id.lbtn);
+        username = findViewById(R.id.lusername); //cast username
+        password = findViewById(R.id.lpassword); //cast password
+        login = findViewById(R.id.lbtn); //cast login button
 
-        TextView frpassword = (TextView) findViewById(R.id.fpassword);
+        TextView frpassword = (TextView) findViewById(R.id.fpassword); //cast forgot password
 
+        //link update user profile
         frpassword .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,6 +37,7 @@ public class LoginPage extends AppCompatActivity {
             }
         });
 
+        //link to admin panel
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,6 +46,7 @@ public class LoginPage extends AppCompatActivity {
             }
         });
 
+        //validate login to admin panel
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
